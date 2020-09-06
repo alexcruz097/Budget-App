@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+/* classes that will be added with js */
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.neutral {
+    color: gray;
+}
+
+.addItems,
+.incomeExpensive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+/* current date */
+#currentDate{
+    color: rgb(255, 194, 40);;
+}
+li{
+    position: relative;
+}
+
+/* font awesome */
+.far {
+   position: absolute;
+right: 20px;
+
+    color: #DAA520;
+}
+
+.far:hover {
+    color: red;
+}
+
+/* cost of item */
+#costItem {
+    position: absolute;
+    right:50px;
+    color: rgb(0, 255, 213);
+}
+
+
+/* header */
+.header {
+/* 
+    background-image: url(../images/budgetPhone.png);
+
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color:  #81a6b4 ;
+
+}
+
+.headerContent {
+    height: 26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* header h1 */
+#header1,
+#header2{
+    color: rgb(211, 109, 109);
+}
+#header1{
+    font-size: 35px;
+}
+#header2{
+    font-size: 35px;
+}
+
+
+p {
+    font-size: 35px;
+
+}
+
+/* budget */
+#budget{
+    color: rgb(255, 194, 40);
+}
+#budget,
+#budgetLeft {
+    font-size: 75px;
+}
+
+/* Total Income and Expense boxes */
+#totalIncome,
+#totalExpenses {
+
+    font-size: 20px;
+
+}
+
+#totalIncome {
+    padding: 12px 7rem;
+    background-color: rgb(0, 255, 213);
+    color: white;
+
+}
+
+#totalExpenses {
+    margin: 9px 0px;
+    padding: 12px 6.46rem;
+    background-color: red;
+    color: white;
+}
+
+/* div to add items  */
+.addItems {
+    padding: 12px;
+}
+
+#AddRemove,
+.addDescription,
+.addValue,
+#submitBTN {
+    padding: 9px 20px;
+}
+
+/* Income items container*/
+
+.income label {
+    color: rgb(0, 255, 213);
+ 
+}
+
+/* Expenses items container */
+
+.expenses label {
+    color: red;
+    
+}
+
+/* both Income and Expenses items Conainer */
+#item {
+    min-width: 400px;
+}
+#item:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0);
+    border-top: 1px solid black;
+    ;
+}
+
+#item:nth-child(even) {
+    background-color: rgb(235, 235, 235);;
+}
+
+.incomeExpensive label {
+    font-size: 40px;
+}
+.incomeExpensive{
+    width: 90%;
+    margin: auto;
+}
+
+
+
+#item:hover {
+    transition: transform 1s ease;
+    transform: scale(1.021);
+    cursor: pointer;
+}
+.expensiveItems  #costItem
+{
+color: red;
+}
+.incomeItems,
+.expensiveItems {
+    list-style-type: none;
+    font-size: 25px;
+
+}
+/* item li */
+
+
+/* media queries */
+ @media(min-width: 600px) {
+
+
+ }
+@media(min-width: 900px) {
+    .incomeExpensive {
+
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: start;
+  
+    }
+    .incomeItems,
+    .expensiveItems{
+margin: 0px 7px;
+    }
+
+} 
