@@ -3,12 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Balsamiq Sans', cursive;
+    font-family: "Balsamiq Sans", cursive;
+}
+
+body {
+    background-color: #e4f9f5;
 }
 
 /* classes that will be added with js */
 .positive {
-    color: green;
+    color: #30e3ca;
 }
 
 .negative {
@@ -19,113 +23,85 @@
     color: gray;
 }
 
-.addItems,
-.incomeExpensive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-/* current date */
-#currentDate{
-    color: rgb(255, 194, 40);;
-}
-li{
-    position: relative;
-}
-
-/* font awesome */
-.far {
-   position: absolute;
-right: 20px;
-
-    color: #DAA520;
-}
-
-.far:hover {
-    color: red;
-}
-
-/* cost of item */
-#costItem {
-    position: absolute;
-    right:50px;
-    color: rgb(0, 255, 213);
-}
-
-
-/* header */
+/****************** header  *************************/
 .header {
-/* 
-    background-image: url(../images/budgetPhone.png);
-
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.01)),
+        url(./images/grow-money.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    background-repeat: no-repeat; */
-    background-color:  #81a6b4 ;
-
+    background-position: 100% 50%;
 }
 
 .headerContent {
-    height: 26rem;
+    height: 19rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-/* header h1 */
-#header1,
-#header2{
-    color: rgb(211, 109, 109);
-}
-#header1{
-    font-size: 35px;
-}
-#header2{
-    font-size: 35px;
+#total-budget-header,
+#budget-left-header {
+    color: white;
 }
 
+#total-budget-header {
+    font-size: 20px;
+}
 
-p {
-    font-size: 35px;
+#budget-left-header {
+    font-size: 14px;
+}
 
+.dollar-sign {
+    font-size: 17px;
+    color: #11999e;
+}
+
+/* current date */
+#currentDate {
+    color: #40514e;
 }
 
 /* budget */
-#budget{
-    color: rgb(255, 194, 40);
+#budget {
+    color: #e4f9f5;
 }
+
 #budget,
 #budgetLeft {
-    font-size: 75px;
+    font-size: 35px;
 }
 
 /* Total Income and Expense boxes */
 #totalIncome,
 #totalExpenses {
-
-    font-size: 20px;
-
+    font-size: 15px;
+    border-radius: 12px;
 }
 
 #totalIncome {
-    padding: 12px 7rem;
-    background-color: rgb(0, 255, 213);
+    padding: 12px 2rem;
+    background-color: #30e3ca;
     color: white;
-
 }
 
 #totalExpenses {
     margin: 9px 0px;
-    padding: 12px 6.46rem;
-    background-color: red;
+    padding: 12px 1.46rem;
+    background-color: #ff7e67;
     color: white;
 }
 
-/* div to add items  */
+/******************div to add items  ********************************/
 .addItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 #AddRemove,
@@ -133,80 +109,158 @@ p {
 .addValue,
 #submitBTN {
     padding: 9px 20px;
+    margin: 5px 0px;
+
+    outline: none;
+}
+
+#AddRemove,
+.addValue,
+.addDescription {
+    border: 1px solid #11999e
+}
+
+#AddRemove,
+.addValue {
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+#submitBTN,
+.addDescription {
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+
+#submitBTN {
+    background-color: #ff7e67;
+    border: none;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(to right, #ff7e67 50%, #11999e 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: white;
+    transition: all 2s ease;
+}
+
+#submitBTN:hover {
+    transform: scale(1.2);
+    background-position: left bottom;
 }
 
 /* Income items container*/
 
+
+.incomeItems,
+.expensiveItems {
+    list-style-type: none;
+    font-size: 20px;
+    width: 90%;
+    margin: auto;
+    color: #40514e;
+}
+
+
+
+.income #item {
+    border-radius: 12px;
+    border-left: 5px solid #30e3ca;
+    border-bottom: 1px solid #30e3ca;
+}
+
+.expenses #item {
+    border-radius: 5px;
+    border-left: 5px solid #ff7e67;
+    border-bottom: 1px solid #ff7e67;
+}
+
+.expenses label,
 .income label {
-    color: rgb(0, 255, 213);
- 
+    padding-left: 10%;
+    margin: auto;
+    font-size: 25px;
+}
+
+.income label {
+    color: #11999e;
+
 }
 
 /* Expenses items container */
 
+
 .expenses label {
-    color: red;
-    
+    color: #ff7e67;
+
 }
 
 /* both Income and Expenses items Conainer */
-#item {
-    min-width: 400px;
-}
-#item:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0);
-    border-top: 1px solid black;
-    ;
-}
+
+#item:nth-child(odd) {}
 
 #item:nth-child(even) {
-    background-color: rgb(235, 235, 235);;
+    background-color: #E4F3F9;
+
 }
 
-.incomeExpensive label {
-    font-size: 40px;
+#item {
+    padding: 7px 0px;
+    transition: transform 1s ease-out;
 }
-.incomeExpensive{
-    width: 90%;
-    margin: auto;
-}
-
-
 
 #item:hover {
-    transition: transform 1s ease;
-    transform: scale(1.021);
+    transform: scale(1.05);
     cursor: pointer;
-}
-.expensiveItems  #costItem
-{
-color: red;
-}
-.incomeItems,
-.expensiveItems {
-    list-style-type: none;
-    font-size: 25px;
+    background-color: rgba(126, 126, 126, 0.144);
 
 }
+
+.expensiveItems #costItem {
+    color: red;
+}
+
+
+
+
+
+/* font awesome */
+.far {
+    position: absolute;
+    right: 10%;
+    color: #40514e;
+}
+
+.far:hover {
+    color: red;
+
+}
+
+/* cost of item */
+#costItem {
+    position: absolute;
+    right: 20%;
+    color: #11999e;
+}
+
 /* item li */
 
-
 /* media queries */
- @media(min-width: 600px) {
 
-
- }
-@media(min-width: 900px) {
+/* @media(min-width: 900px) {
     .incomeExpensive {
 
-     flex-direction: row;
-     justify-content: space-around;
-     align-items: start;
-  
-    }
-    .incomeItems,
-    .expensiveItems{
-margin: 0px 7px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+
     }
 
-} 
+    .incomeItems,
+    .expensiveItems {
+        margin: 0px 7px;
+    }
+
+} */

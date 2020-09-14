@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget App</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2cf03dde73.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2cf03dde73.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <div class="wholePageContainer">
-        <div class="header">
-            <div class="headerContent">
-                <h1 id="header1">Your budget for this month is:  </h1>
-                <p>$<span id="budget"></span></p>
-                <h1 id="header2">Your total Income and Expenses as of:  <span id="currentDate"></span>:</h1>
-                <p >$<span id="budgetLeft">#</span></p>
-                <p id="totalIncome">INCOME: <span id="incomeNumber">#</span></p>
-                <p id="totalExpenses">EXPENSES : <span id="expensiveNumbers">#</span></p>
-            </div>
+      <div class="header">
+        <div class="headerContent">
+          <h1 id="total-budget-header">Your budget for this month is:</h1>
+          <p class="dollar-sign">$<span id="budget"></span></p>
+          <h1 id="budget-left-header">
+            Your remaining balance as of: <span id="currentDate"></span>:
+          </h1>
+          <p class="dollar-sign">$<span id="budgetLeft">#</span></p>
+          <p id="totalIncome">INCOME: <span id="incomeNumber">#</span></p>
+          <p id="totalExpenses">
+            EXPENSES : <span id="expensiveNumbers">#</span>
+          </p>
         </div>
+      </div>
 
-        <div class="addItems">
-            <form action=""  onsubmit="return false;">
-            <select name="addRemove" id="AddRemove">
-                <option value="negative">-</option>
-                <option value="positive">+</option>
-            </select>
-            <input type="text" class="addDescription" placeholder="Add Description" onfocus="this.value=''" required maxlength="19">
-            <input type="number" class="addValue" onfocus="this.value=''" placeholder="$Value" required>
-            <button id="submitBTN" type="submit">Add Expenses</button>
+      <div>
+        <form class="addItems" action="" onsubmit="return false;">
+          <select name="addRemove" id="AddRemove">
+            <option value="negative">-</option>
+            <option value="positive">+</option>
+          </select>
+          <input
+            type="text"
+            class="addDescription"
+            placeholder="Add Description"
+            onfocus="this.value=''"
+            required
+            maxlength="19"
+          />
+          <input
+            type="number"
+            class="addValue"
+            onfocus="this.value=''"
+            placeholder="$Value"
+            required
+          />
+          <button id="submitBTN" type="submit">Add Expenses</button>
         </form>
+      </div>
+      <div class="incomeExpensive">
+        <div class="income">
+          <label for="income">INCOME</label>
+          <ul class="incomeItems"></ul>
         </div>
-        <div class="incomeExpensive">
-            <div class="income">
-                <label for="income">INCOME</label>
-                <ul class="incomeItems">
-
-                   
-                </ul>
-            </div>
-            <div class="expenses">
-                <label for="expenses">EXPENSES</label>
-                <ul class="expensiveItems">
-                  
-                </ul>
-            </div>
+        <div class="expenses">
+          <label for="expenses">EXPENSES</label>
+          <ul class="expensiveItems"></ul>
         </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
