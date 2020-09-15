@@ -41,9 +41,8 @@ ${date.getMonth() > 9 ? "" : "0"}${date.getMonth()}/
 ${date.getDate() > 9 ? "" : "0"}${date.getDate()}/
 ${date.getFullYear()}
 `;
-  // change the color of the total income on condition
-function changeColor()
-{
+// change the color of the total income on condition
+function changeColor() {
   if (totalBudgetLeft > 0) {
     budgetLeft.classList.remove("negative");
     budgetLeft.classList.remove("neutral");
@@ -72,7 +71,6 @@ submitBTN.addEventListener("click", function () {
     totalIncome += parseInt(addValue.value);
     incomeNumber.textContent = totalIncome;
 
-
     // check if the user wants to add expenses
   } else if (
     status.value === "negative" &&
@@ -90,7 +88,7 @@ submitBTN.addEventListener("click", function () {
     budgetLeft.textContent = totalBudgetLeft;
   }
   // change the color of the total income on condition
-    changeColor();
+  changeColor();
   // alert if the budget is going to be surpass
   if (totalBudgetLeft < 0 && status.value === "negative") {
     alert(
@@ -110,7 +108,6 @@ incomeExpensive.addEventListener("click", function (e) {
       // get the value of the item and update it to the total income
       totalIncome = totalIncome - e.target.previousElementSibling.innerText;
       incomeNumber.textContent = totalIncome;
-  
     } else {
       // get the value of the item and update it to the total expenses
       totalExpenses = totalExpenses - e.target.previousElementSibling.innerText;
@@ -118,8 +115,8 @@ incomeExpensive.addEventListener("click", function (e) {
       // update the total budget left when it is deleted:Here I add to the Expenses when it is deleted
       totalBudgetLeft =
         totalBudgetLeft + parseInt(e.target.previousElementSibling.innerText);
-        budgetLeft.textContent = totalBudgetLeft;
-            changeColor();
+      budgetLeft.textContent = totalBudgetLeft;
+      changeColor();
     }
     // delete the parent of the trash
     e.target.parentElement.remove();

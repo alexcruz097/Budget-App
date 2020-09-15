@@ -2,12 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    font-family: "Balsamiq Sans", cursive;
+    font-family: "Balsamiq Sans";
 }
 
 body {
     background-color: #e4f9f5;
+
+}
+
+/* max-width */
+.addItems,
+.incomeExpensive {
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* classes that will be added with js */
@@ -61,7 +68,7 @@ body {
 
 /* current date */
 #currentDate {
-    color: #40514e;
+    color: rgb(168, 214, 245);
 }
 
 /* budget */
@@ -94,7 +101,7 @@ body {
     color: white;
 }
 
-/******************div to add items  ********************************/
+/******************FORM to add items  ********************************/
 .addItems {
     display: flex;
     flex-direction: column;
@@ -136,9 +143,7 @@ body {
 #submitBTN {
     background-color: #ff7e67;
     border: none;
-    border: none;
     cursor: pointer;
-
     background: linear-gradient(to right, #ff7e67 50%, #11999e 50%);
     background-size: 200% 100%;
     background-position: right bottom;
@@ -151,8 +156,12 @@ body {
     background-position: left bottom;
 }
 
-/* Income items container*/
+/* ************** Income and expenses *************/
 
+.incomeExpensive {
+    display: flex;
+    flex-direction: column;
+}
 
 .incomeItems,
 .expensiveItems {
@@ -179,10 +188,13 @@ body {
 
 .expenses label,
 .income label {
-    padding-left: 10%;
-    margin: auto;
+
+    margin-left: 35%;
+
     font-size: 25px;
 }
+
+/* ******Income and Expenses section */
 
 .income label {
     color: #11999e;
@@ -206,56 +218,168 @@ body {
 
 }
 
+.expensiveItems #costItem {
+    color: red;
+}
+
+/* font awesome:trash and position of the price of the item */
 #item {
     padding: 7px 0px;
     transition: transform 1s ease-out;
+    position: relative;
 }
 
 #item:hover {
     transform: scale(1.05);
     cursor: pointer;
     background-color: rgba(126, 126, 126, 0.144);
-
 }
 
-.expensiveItems #costItem {
-    color: red;
-}
-
-
-
-
-
-/* font awesome */
-.far {
+/* Icon  of trash can position styles */
+.income .far,
+.expenses .far {
     position: absolute;
-    right: 10%;
+    right: 1rem;
     color: #40514e;
 }
 
 .far:hover {
     color: red;
-
 }
 
 /* cost of item */
-#costItem {
+.expenses #costItem,
+.income #costItem {
     position: absolute;
-    right: 20%;
+    right: 3rem;
     color: #11999e;
 }
 
-/* item li */
+@media(min-width: 500px) {
 
-/* media queries */
+    /****************** header  *************************/
+    .header {
+        background-size: cover;
+        background-position: 10% 70%;
+    }
 
-/* @media(min-width: 900px) {
+    .headerContent {
+        height: 25rem;
+    }
+
+    #total-budget-header {
+        font-size: 27px;
+    }
+
+    #budget-left-header {
+        font-size: 20px;
+    }
+
+    .dollar-sign {
+        font-size: 17px;
+        color: #11999e;
+    }
+
+    /* budget */
+    #budget {
+        color: #e4f9f5;
+    }
+
+    #budget,
+    #budgetLeft {
+        font-size: 40px;
+    }
+
+    /* Total Income and Expense boxes */
+    #totalIncome,
+    #totalExpenses {
+        font-size: 20px;
+    }
+
+    /******************div to add items  ********************************/
+    #AddRemove,
+    .addDescription,
+    .addValue,
+    #submitBTN {
+        padding: 9px 30px;
+
+    }
+
+    #submitBTN {
+        padding: 12px 75px;
+    }
+
+}
+
+@media(min-width: 768px) {
+
+
+    /****************** header  *************************/
+    .header {
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .headerContent {
+        height: 25rem;
+    }
+
+    #total-budget-header {
+        font-size: 35px;
+        font-weight: 100;
+    }
+
+    #budget-left-header {
+        font-size: 22px;
+    }
+
+    .dollar-sign {
+        font-size: 20px;
+
+    }
+
+    /* budget */
+
+    #budget,
+    #budgetLeft {
+        font-size: 40px;
+    }
+
+    /* Total Income and Expense boxes */
+    #totalIncome,
+    #totalExpenses {
+        padding: 10px 75px;
+    }
+
+    /************** form ***************/
+    .addItems {
+        padding: 0px;
+        flex-direction: row;
+        width: 100%;
+        margin: 17px auto;
+        justify-content: center;
+    }
+
+    .addDescription,
+    .addValue,
+    #submitBTN {
+        margin-left: 12px;
+    }
+
+    /* Income items container*/
     .incomeExpensive {
-
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: start;
+        align-items: center;
+    }
 
+    .income,
+    .expenses {
+        width: 100%;
+        margin: auto;
     }
 
     .incomeItems,
@@ -263,4 +387,51 @@ body {
         margin: 0px 7px;
     }
 
-} */
+    .incomeItems,
+    .expensiveItems {
+        font-size: 22px;
+        width: 95%;
+    }
+
+    .expenses label,
+    .income label {
+
+        left: 3rem;
+        font-size: 30px;
+
+    }
+
+    /* font awesome:trash and position of the price of the item */
+    #item {
+        position: relative;
+    }
+
+    .income .far,
+    .expenses .far {
+        position: absolute;
+        right: 1rem;
+
+    }
+
+    .expenses #costItem,
+    .income #costItem {
+
+        position: absolute;
+        right: 3rem;
+
+    }
+
+    @media(min-width: 900px) {
+        .incomeExpensive {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: start;
+
+        }
+
+        .incomeItems,
+        .expensiveItems {
+            margin: 0px 7px;
+        }
+    }
